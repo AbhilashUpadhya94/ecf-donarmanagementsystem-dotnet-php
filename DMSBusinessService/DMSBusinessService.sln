@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{B1041F34-3F27-
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\..\..\..\xampp\htdocs\r\123.html = ..\..\..\..\..\..\xampp\htdocs\r\123.html
 		..\..\..\..\..\..\xampp\htdocs\r\admin-register.html = ..\..\..\..\..\..\xampp\htdocs\r\admin-register.html
+		F:\donor_details.html = F:\donor_details.html
 		..\..\..\..\..\..\xampp\htdocs\r\edit.html = ..\..\..\..\..\..\xampp\htdocs\r\edit.html
 		..\..\..\..\..\..\xampp\htdocs\r\index.html = ..\..\..\..\..\..\xampp\htdocs\r\index.html
 		..\..\..\..\..\..\xampp\htdocs\r\login.php = ..\..\..\..\..\..\xampp\htdocs\r\login.php
