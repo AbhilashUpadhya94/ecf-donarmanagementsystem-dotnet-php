@@ -6,6 +6,15 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMSBusinessService", "DMSBusinessService\DMSBusinessService.csproj", "{9AC40D69-81DC-496A-878C-32256ACA567B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{B1041F34-3F27-4402-A282-4D95DCF3183E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\xampp\htdocs\r\123.html = ..\..\..\..\..\..\xampp\htdocs\r\123.html
+		..\..\..\..\..\..\xampp\htdocs\r\admin-register.html = ..\..\..\..\..\..\xampp\htdocs\r\admin-register.html
+		..\..\..\..\..\..\xampp\htdocs\r\edit.html = ..\..\..\..\..\..\xampp\htdocs\r\edit.html
+		..\..\..\..\..\..\xampp\htdocs\r\index.html = ..\..\..\..\..\..\xampp\htdocs\r\index.html
+		..\..\..\..\..\..\xampp\htdocs\r\login.php = ..\..\..\..\..\..\xampp\htdocs\r\login.php
+		..\..\..\..\..\..\xampp\htdocs\r\register.php = ..\..\..\..\..\..\xampp\htdocs\r\register.php
+		..\..\..\..\..\..\xampp\htdocs\r\verify.html = ..\..\..\..\..\..\xampp\htdocs\r\verify.html
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{5A6872FF-78A1-4DBE-A428-78309C9C417D}"
 EndProject
@@ -14,6 +23,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF0457EB-E7B4-4693-891D-3706AF848A44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{68EBD9A6-7E73-416B-8E47-916999F507E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{94095C86-8FD0-4FB9-96CC-C696DC59E574}"
+	ProjectSection(SolutionItems) = preProject
+		I:\Bazzinga.docx = I:\Bazzinga.docx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
