@@ -53,4 +53,12 @@ namespace DataAccess.Enums
         Error,
         Blocked
     }
+
+    public enum ChangePasswordStatus
+    {
+        Success,
+        OldPwdMismatch,
+        Error,
+        None
+    }
 }

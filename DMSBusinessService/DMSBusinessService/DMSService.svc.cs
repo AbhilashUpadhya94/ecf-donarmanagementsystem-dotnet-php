@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using DataAccess;
 
 namespace DMSBusinessService
 {
@@ -14,52 +15,165 @@ namespace DMSBusinessService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IDMSService
     {
+        DMSORMDataContext context = new DMSORMDataContext();
         public string GetData(int value)
         {
-            return string.Format("You entered: {0}", value);
+            throw new NotImplementedException();
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            throw new NotImplementedException();
         }
-
 
         public bool Register(UserInfo userInfo)
         {
-            return true;
+            Login login = new DataAccess.Login();
+            login.UserName = userInfo.UserName;
+            login.Password = userInfo.Password;
+            login.UserID = Guid.NewGuid().ToString();
+            UserInformation uinfo = new DataAccess.UserInformation();
+            context.Logins.InsertOnSubmit(login);
+            uinfo.UserId = login.UserID;
+            fillGender(userInfo, uinfo);
+            uinfo.Address = userInfo.Address;
+            uinfo.Contact = userInfo.Contact;
+            uinfo.Contact1 = userInfo.Contact1;
+            uinfo.Country = userInfo.Country;
+            uinfo.DOB = DateTime.Parse(userInfo.Dob);
+            uinfo.FirstName = userInfo.FirstName;
+            uinfo.id = Guid.NewGuid().ToString();
+            uinfo.Initials = userInfo.Intials;
+            uinfo.LastName = userInfo.LastName;
+            uinfo.MiddleName = userInfo.MiddleName;
+            context.UserInformations.InsertOnSubmit(uinfo);
+            try
+            {
+                context.SubmitChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-
-        public LoginStatus Login(String id, String pwd)
+        private static void fillGender(UserInfo userInfo, DataAccess.UserInformation uinfo)
         {
-            return LoginStatus.Expired;
+            switch (userInfo.Gender)
+            {
+                case Gender.Male:
+                    uinfo.Gender = 'M';
+                    break;
+                case Gender.Female:
+                    uinfo.Gender = 'F';
+                    break;
+                case Gender.Transgender:
+                    uinfo.Gender = 'T';
+                    break;
+                case Gender.None:
+                    uinfo.Gender = 'N';
+                    break;
+            }
         }
 
-        public bool ChangePassword(string username, string oldPwd, string newPwd)
+        public LoginStatus Login(string id, string pwd)
         {
-            throw new NotImplementedException();
+            var user = from users in context.Logins where users.UserName == id select users;
+            if (user.Count() == 0)
+            {
+                user = from users in context.Logins where users.Email == id select users;
+            }
+            if (user.Count() == 0)
+            {
+                return LoginStatus.Error;
+            }
+            else
+            {
+                var valid = (user.ToList()[0] as Login).IsValidUser(pwd);
+                if (valid)
+                {
+                    return LoginStatus.LoggedIn;
+                }
+            }
+            return LoginStatus.Error;
+        }
+
+        public ChangePasswordStatus ChangePassword(string username, string oldPwd, string newPwd)
+        {
+            try
+            {
+                var users = from user in context.Logins where user.UserName == username select user;
+                if (users.Count() == 1)
+                {
+                    var login = users.ToList()[0] as Login;
+                    if (oldPwd == login.Password)
+                    {
+                        login.Password = newPwd;
+                        return ChangePasswordStatus.Success;
+                    }
+                    else
+                    {
+                        return ChangePasswordStatus.OldPwdMismatch;
+                    }
+                }
+                return ChangePasswordStatus.Error;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool CreateNewPassword(string username, string pwd)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var users = from user in context.Logins where user.UserName == username select user;
+                if (users.Count() == 1)
+                {
+                    var login = users.ToList()[0] as Login;
+                    
+                        login.Password = pwd;
+                        return true;
+                    
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public bool UpdateOrUpdateDonorDetails(DonarDetails donarInfo)
+        public bool UpdateOrUpdateDonorDetails(DonarDetails donarInfo, string userName)
         {
             throw new NotImplementedException();
         }
 
-        public DonarDetails GetDonorDetails(string username)
+        public DonarDetails GetDonorDetails(string donarId)
+        {
+            var donars = from donar in context.DonorDetails where donar.UserId == donarId select donar;
+            if(donars.Count() == 1)
+            {
+                var donar = donars.ToList()[0] as DataAccess.DonorDetail;
+                var users = from user in context.UserInformations where user.UserId == donar.UserId select user;
+                var usr = users.ToArray()[0];
+                DonarDetails dd = new DonarDetails();
+                dd.Name = usr.Initials + " " + usr.FirstName + " " + usr.MiddleName + " " + usr.LastName;
+                return dd;
+            }
+            return null;
+        }
+
+        public List<String> GetDonarSources()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public List<DonarDetails> GetAllDonars()
         {
             throw new NotImplementedException();
         }

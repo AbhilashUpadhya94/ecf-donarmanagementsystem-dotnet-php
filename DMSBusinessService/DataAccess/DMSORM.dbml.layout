@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 16.125" name="DMSORM">
+  <DataContextMoniker Name="/DMSORMDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1f717d79-9001-4bd3-971d-e456eef89670" absoluteBounds="3.75, 5.75, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/DMSORMDataContext/UserInformation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc1fdb1e-1b52-4add-b1ea-208423d0e438" absoluteBounds="3.765, 6.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ce6075fc-9c07-4d24-9510-4da4b2690d42" absoluteBounds="0.75, 14, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DMSORMDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9da81ba9-08d3-4e27-af24-828ebef4eda3" absoluteBounds="0.765, 14.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dbb5e37c-10e8-47a0-9565-3075ff9cbd80" absoluteBounds="6.25, 1.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DMSORMDataContext/PaymentUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e2b9f003-8c5c-4993-8d0c-1fcfd9cf6eef" absoluteBounds="6.265, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="affe5502-85bc-4ec3-b836-5945254e6f26" absoluteBounds="3.5, 1, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/DMSORMDataContext/Payment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1bc26b4d-349a-4905-a112-8902fbc9c5b2" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="583a4efa-79df-4922-8bfc-f11cd09b9be0" absoluteBounds="3.5, 13.625, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/DMSORMDataContext/Login" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45666dc3-7503-421d-9e70-2b1ae7241772" absoluteBounds="3.515, 14.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dd0f0cfd-ca4d-4797-93af-b27ed8f15de6" absoluteBounds="6.25, 13.375, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/DMSORMDataContext/DonorDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5cc9465-2720-4b48-b4b3-151f2a0a166e" absoluteBounds="6.265, 13.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a231fba-dcb1-420a-a395-d71f90abd68f" absoluteBounds="0.75, 1.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DMSORMDataContext/DonationType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca4765e4-aa89-4716-9d85-4430f003c8d8" absoluteBounds="0.765, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93ab389b-602e-4564-84bd-f6596228489e" absoluteBounds="0.75, 5.125, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DMSORMDataContext/DonationCause" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30ce51ed-2675-432c-afd3-94cd2881ba4e" absoluteBounds="0.765, 5.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="38fd84b9-3b83-49ef-b714-cba0b9baafbc" absoluteBounds="0.75, 10.25, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DMSORMDataContext/ChequeDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75b00a50-167d-4c25-b2a1-a766d8c47822" absoluteBounds="0.765, 10.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="63767b4a-5ab3-429e-8c2d-6d001555d68a" absoluteBounds="0.75, 7.625, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/DMSORMDataContext/CashDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cba6dfe7-3d8e-47c6-9a60-fb0692907f04" absoluteBounds="0.765, 8.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.66429768880208); (6.25 : 2.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DMSORMDataContext/Payment/Payment_PaymentUser" />
+      <nodes>
+        <classShapeMoniker Id="affe5502-85bc-4ec3-b836-5945254e6f26" />
+        <classShapeMoniker Id="dbb5e37c-10e8-47a0-9565-3075ff9cbd80" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 14.6065991210937); (6 : 14.6065991210937); (6 : 13.125); (7.25 : 13.125); (7.25 : 3.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DMSORMDataContext/Login/Login_PaymentUser" />
+      <nodes>
+        <classShapeMoniker Id="583a4efa-79df-4922-8bfc-f11cd09b9be0" />
+        <classShapeMoniker Id="dbb5e37c-10e8-47a0-9565-3075ff9cbd80" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 14.5969962565104); (3.5 : 14.5969962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DMSORMDataContext/Role/Role_Login" />
+      <nodes>
+        <classShapeMoniker Id="ce6075fc-9c07-4d24-9510-4da4b2690d42" />
+        <classShapeMoniker Id="583a4efa-79df-4922-8bfc-f11cd09b9be0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 14.0532995605469); (5.91666666666667 : 14.0532995605469 : JumpStart); (6.08333333333333 : 14.0532995605469 : JumpEnd); (6.25 : 14.0532995605469)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DMSORMDataContext/Login/Login_DonorDetail" />
+      <nodes>
+        <classShapeMoniker Id="583a4efa-79df-4922-8bfc-f11cd09b9be0" />
+        <classShapeMoniker Id="dd0f0cfd-ca4d-4797-93af-b27ed8f15de6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.66429768880208); (3.04166666666667 : 2.66429768880208 : JumpStart); (3.20833333333333 : 2.66429768880208 : JumpEnd); (3.5 : 2.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DMSORMDataContext/DonationType/DonationType_Payment" />
+      <nodes>
+        <classShapeMoniker Id="5a231fba-dcb1-420a-a395-d71f90abd68f" />
+        <classShapeMoniker Id="affe5502-85bc-4ec3-b836-5945254e6f26" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.40625); (3.04166666666667 : 5.40625 : JumpStart); (3.20833333333333 : 5.40625 : JumpEnd); (3.59375 : 5.40625); (3.59375 : 4.30930826822917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DMSORMDataContext/DonationCause/DonationCause_Payment" />
+      <nodes>
+        <classShapeMoniker Id="93ab389b-602e-4564-84bd-f6596228489e" />
+        <classShapeMoniker Id="affe5502-85bc-4ec3-b836-5945254e6f26" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.4239005533854); (3.5624975 : 11.4239005533854); (3.5624975 : 4.30930826822917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DMSORMDataContext/ChequeDetail/ChequeDetail_Payment" />
+      <nodes>
+        <classShapeMoniker Id="38fd84b9-3b83-49ef-b714-cba0b9baafbc" />
+        <classShapeMoniker Id="affe5502-85bc-4ec3-b836-5945254e6f26" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.625); (3.125 : 7.25); (3.125 : 1.80089684440104); (3.5 : 1.80089684440104)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DMSORMDataContext/CashDetail/CashDetail_Payment" />
+      <nodes>
+        <classShapeMoniker Id="63767b4a-5ab3-429e-8c2d-6d001555d68a" />
+        <classShapeMoniker Id="affe5502-85bc-4ec3-b836-5945254e6f26" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

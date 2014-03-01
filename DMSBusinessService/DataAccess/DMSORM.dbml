@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ECF" Class="DMSORMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=GURU\MSSQLSERVER2012;Initial Catalog=ECF;Integrated Security=True" SettingsObjectName="DataAccess.Properties.Settings" SettingsPropertyName="ECFConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.UserInformation" Member="UserInformations">
+    <Type Name="UserInformation">
+      <Column Name="UserId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Initials" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PinCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Contact1" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="Contact" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="Valid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Role" Member="Role1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Role_Login" Member="Logins" ThisKey="RoleId" OtherKey="RoleId" Type="Login" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaymentUsers" Member="PaymentUsers">
+    <Type Name="PaymentUser">
+      <Column Name="PaymentId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modified_time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="Payment_PaymentUser" Member="Payment" ThisKey="PaymentId" OtherKey="PaymentId" Type="Payment" IsForeignKey="true" />
+      <Association Name="Login_PaymentUser" Member="Login" ThisKey="UserId" OtherKey="UserID" Type="Login" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment" Member="Payments">
+    <Type Name="Payment">
+      <Column Name="Modified_time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PaymentId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DtypeId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TransactionId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GatewayCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CurrencyType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CauseId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ChequeId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CashId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Acknowledge" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Payment_PaymentUser" Member="PaymentUsers" ThisKey="PaymentId" OtherKey="PaymentId" Type="PaymentUser" />
+      <Association Name="DonationType_Payment" Member="DonationType" ThisKey="DtypeId" OtherKey="DtypeId" Type="DonationType" IsForeignKey="true" />
+      <Association Name="DonationCause_Payment" Member="DonationCause" ThisKey="CauseId" OtherKey="CauseId" Type="DonationCause" IsForeignKey="true" />
+      <Association Name="ChequeDetail_Payment" Member="ChequeDetail" ThisKey="ChequeId" OtherKey="CDID" Type="ChequeDetail" IsForeignKey="true" />
+      <Association Name="CashDetail_Payment" Member="CashDetail" ThisKey="CashId" OtherKey="Id" Type="CashDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Login" Member="Logins">
+    <Type Name="Login">
+      <Column Name="UserID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NoOfAttempts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Login_PaymentUser" Member="PaymentUsers" ThisKey="UserID" OtherKey="UserId" Type="PaymentUser" />
+      <Association Name="Login_DonorDetail" Member="DonorDetails" ThisKey="UserID" OtherKey="UserId" Type="DonorDetail" />
+      <Association Name="Role_Login" Member="Role" ThisKey="RoleId" OtherKey="RoleId" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DonorDetails" Member="DonorDetails">
+    <Type Name="DonorDetail">
+      <Column Name="UserId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DonorBucket" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PledgeDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PledgeAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DonationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Segment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FinancialYear" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Interval" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Login_DonorDetail" Member="Login" ThisKey="UserId" OtherKey="UserID" Type="Login" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DonationType" Member="DonationTypes">
+    <Type Name="DonationType">
+      <Column Name="Modified_time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DtypeId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="DonationType_Payment" Member="Payments" ThisKey="DtypeId" OtherKey="DtypeId" Type="Payment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DonationCause" Member="DonationCauses">
+    <Type Name="DonationCause">
+      <Column Name="Modified_time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CauseId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CauseAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="DonationCause_Payment" Member="Payments" ThisKey="CauseId" OtherKey="CauseId" Type="Payment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChequeDetails" Member="ChequeDetails">
+    <Type Name="ChequeDetail">
+      <Column Name="Modified_time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Created_time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="Created_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CDID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChequeNumber" Type="System.Decimal" DbType="Decimal(12,0)" CanBeNull="true" />
+      <Column Name="BankName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="ChequeDetail_Payment" Member="Payments" ThisKey="CDID" OtherKey="ChequeId" Type="Payment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CashDetails" Member="CashDetails">
+    <Type Name="CashDetail">
+      <Column Name="Id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ReceiptId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modified_By" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Modified_time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="CashDetail_Payment" Member="Payments" ThisKey="Id" OtherKey="CashId" Type="Payment" />
+    </Type>
+  </Table>
+</Database>

@@ -22,13 +22,13 @@ namespace DMSBusinessService
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         [OperationContract]
-        Boolean Register(UserInfo userInfo, String userName);
+        Boolean Register(UserInfo userInfo);
 
         [OperationContract]
         LoginStatus Login(String id, String pwd);
 
         [OperationContract]
-        Boolean ChangePassword(String username, String oldPwd, String newPwd);
+        ChangePasswordStatus ChangePassword(String username, String oldPwd, String newPwd);
 
         [OperationContract]
         Boolean CreateNewPassword(String username, String pwd);
@@ -37,10 +37,13 @@ namespace DMSBusinessService
         Boolean UpdateOrUpdateDonorDetails(DonarDetails donarInfo, String userName);
 
         [OperationContract]
-        DonarDetails GetDonorDetails(String username);
+        DonarDetails GetDonorDetails(String donarId);
 
         [OperationContract]
         List<String> GetDonarSources();
+
+        [OperationContract]
+        List<DonarDetails> GetAllDonars();
 
 
         // TODO: Add your service operations here

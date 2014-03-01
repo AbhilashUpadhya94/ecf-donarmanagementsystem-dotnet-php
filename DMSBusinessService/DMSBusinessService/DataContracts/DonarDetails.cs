@@ -17,6 +17,14 @@ namespace DMSBusinessService.DataContracts
         private String source;
         private String finacialYear;
         private Interval interval = Interval.None;
+        private String name = String.Empty;
+
+        [DataMember]
+        public String Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
         [DataMember]
         public Interval Interval
