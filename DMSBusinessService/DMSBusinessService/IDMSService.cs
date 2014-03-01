@@ -45,6 +45,9 @@ namespace DMSBusinessService
         [OperationContract]
         List<DonarDetails> GetAllDonars();
 
+        [OperationContract]
+        Boolean AddDonar(UserInfo uinfo, DonarDetails dd);
+
 
         // TODO: Add your service operations here
     }

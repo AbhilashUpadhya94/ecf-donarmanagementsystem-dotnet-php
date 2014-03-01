@@ -28,6 +28,11 @@ namespace DMSBusinessService
 
         public bool Register(UserInfo userInfo)
         {
+            return registerUser(userInfo);
+        }
+
+        private bool registerUser(UserInfo userInfo)
+        {
             Login login = new DataAccess.Login();
             login.UserName = userInfo.UserName;
             login.Password = userInfo.Password;
@@ -174,6 +179,12 @@ namespace DMSBusinessService
 
 
         public List<DonarDetails> GetAllDonars()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public bool AddDonar(UserInfo uinfo, DonarDetails dd)
         {
             throw new NotImplementedException();
         }

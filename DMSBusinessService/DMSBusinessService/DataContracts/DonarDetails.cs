@@ -18,6 +18,30 @@ namespace DMSBusinessService.DataContracts
         private String finacialYear;
         private Interval interval = Interval.None;
         private String name = String.Empty;
+        private String donationTo = String.Empty;
+        private String nationality = String.Empty;
+        private String currencyType = String.Empty;
+
+        [DataMember]
+        public String CurrencyType
+        {
+            get { return currencyType; }
+            set { currencyType = value; }
+        }
+
+        [DataMember]
+        public String Nationality
+        {
+            get { return nationality; }
+            set { nationality = value; }
+        }
+
+        [DataMember]
+        public String DonationTo
+        {
+            get { return donationTo; }
+            set { donationTo = value; }
+        }
 
         [DataMember]
         public String Name
