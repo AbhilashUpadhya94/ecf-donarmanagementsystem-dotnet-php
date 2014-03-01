@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess.Enums;
+using DMSBusinessService.DataContracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -9,8 +11,8 @@ using System.Text;
 namespace DMSBusinessService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
-    [ServiceContract]
-    public interface IService1
+    [ServiceContract(SessionMode=SessionMode.Allowed)]
+    public interface IDMSService
     {
 
         [OperationContract]
@@ -18,6 +20,28 @@ namespace DMSBusinessService
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
+
+        [OperationContract]
+        Boolean Register(UserInfo userInfo, String userName);
+
+        [OperationContract]
+        LoginStatus Login(String id, String pwd);
+
+        [OperationContract]
+        Boolean ChangePassword(String username, String oldPwd, String newPwd);
+
+        [OperationContract]
+        Boolean CreateNewPassword(String username, String pwd);
+
+        [OperationContract]
+        Boolean UpdateOrUpdateDonorDetails(DonarDetails donarInfo, String userName);
+
+        [OperationContract]
+        DonarDetails GetDonorDetails(String username);
+
+        [OperationContract]
+        List<String> GetDonarSources();
+
 
         // TODO: Add your service operations here
     }
